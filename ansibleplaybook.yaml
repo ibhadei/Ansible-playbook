@@ -1,5 +1,6 @@
 
 
+
 ---
 
 -  Name: installing windows softwares
@@ -12,23 +13,24 @@
 
      - name: Deploy IIS
 
-         win_feature:
+       win_feature:
 
-           name: "web-server"
+         name: "web-server"
 
-            state: present
+         state: present
 
-            restart: yes
+         restart: yes
 
-            include_sub_features: yes
+         include_sub_features: yes
 
-            include_management_tools: yes
+         include_management_tools: yes
 
  
 
-      - name: Install chrome
+     
+     - name: Install chrome
 
-        win_chocolatey:
+       win_chocolatey:
 
          Name: “googlechrome”
 
@@ -36,26 +38,25 @@
 
  
 
-      - name: Download new relic
+     - name: Download new relic
 
-        win_get_url:
+       win_get_url:
 
          url: https://download.newrelic.com/infrastructure_agent/windows/newrelic-infra.msi
 
          dest: C:\newrelic-infra.msi
 
-      - name: Install new relic
+     - name: Install new relic
 
-         win_package:
+       win_package:
 
            path: C:\newrelic-infra.msi
 
            state: present
 
-     
-	 - name: install Octopus Tentacle using chocolatey
+     - name: install Octopus Tentacle using chocolatey
 
-        win_chocolatey:
+       win_chocolatey:
 
          name: octopusdeploy.tentacle
 
@@ -76,8 +77,7 @@
         state: restarted
 
     
-
-    - name: Install Splunk Forwarder
+     - name: Install Splunk Forwarder
 
        win_chocolatey:
 
