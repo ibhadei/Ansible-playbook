@@ -84,3 +84,30 @@
          name: splunk-universalforwarder
 
          state: present
+         
+   
+     - name: Install cntlm auth proxy
+      
+       win_chocolatey: 
+       
+        name: cntlm
+       
+        state: present
+   
+     - name: Start the cntlm service
+      
+       win_service:
+       
+        name: cntlm
+       
+        state: restarted
+   
+  
+     - name: Install chub scrapper
+      
+       win_chocolatey:
+       
+        name: scrapy
+       
+        state: present
+
