@@ -44,7 +44,4 @@
       win_service:
         name: cntlm
         state: restarted
-    - name: Install chub scrapper
-      win_chocolatey:
-        name: scrapy
-        state: present
+   
